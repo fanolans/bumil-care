@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
+
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: [
           const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(),
-            accountName: Text(
-              'Farrel Nolan Syahdony',
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("${assetImages}background.jpg"),
+                  fit: BoxFit.cover),
             ),
-            accountEmail: Text(
-              'mailenolan@gmail.com',
-            ),
+            accountEmail: Text('mailenolan@gmail.com'),
+            accountName: Text('Farrel Nolan Syahdony'),
           ),
           ListTile(
             leading: Icon(
-              Icons.account_circle_rounded,
+              Icons.person,
               color: Theme.of(context).colorScheme.secondary,
             ),
             title: const Text('Profil'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             leading: Icon(
@@ -31,15 +37,19 @@ class DrawerWidget extends StatelessWidget {
               color: Theme.of(context).colorScheme.secondary,
             ),
             title: const Text('Info'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             leading: Icon(
-              Icons.logout_rounded,
+              Icons.logout,
               color: Theme.of(context).colorScheme.secondary,
             ),
             title: const Text('Keluar'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
