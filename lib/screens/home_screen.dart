@@ -9,12 +9,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       drawer: const DrawerWidget(),
       appBar: AppBar(
-        flexibleSpace: const Image(
-          image: AssetImage('${assetImages}appBar-background.jpg'),
-          fit: BoxFit.cover,
-        ),
+        centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
@@ -25,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.45,
+            height: MediaQuery.of(context).size.height * 0.50,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('${assetImages}home-background.png'),
@@ -36,9 +34,9 @@ class HomeScreen extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 130),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.height * 0.20,
@@ -49,14 +47,25 @@ class HomeScreen extends StatelessWidget {
                       ),
                       child: const Text('asasa'),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 100),
-                      child: Column(
-                        children: const [
-                          Text('asasa'),
-                          Text('asasa'),
-                        ],
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          '25 Tahun',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          '12 Minggu Kehamilan',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
