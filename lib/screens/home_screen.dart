@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 import '../widgets/drawer_widget.dart';
-import '../widgets/info_card_widget.dart';
+import '../widgets/card_info_widget.dart';
+import '../widgets/main_features_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              const InfoCardWidget(),
+              const CardInfoWidget(),
               const SizedBox(
                 height: 35,
               ),
@@ -91,8 +92,8 @@ class HomeScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
-                      children: [
-                        const Align(
+                      children: const [
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Fitur Utama',
@@ -102,117 +103,14 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 5,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GestureDetector(
-                              onTap: () => null,
-                              child: Card(
-                                elevation: 5,
-                                shadowColor: Colors.black,
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height / 7,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(15),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        Icon(
-                                          Icons.assignment,
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'Skrining',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'Ayo Prediksi Risiko pada kehamilan anda',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            GestureDetector(
-                              onTap: () => null,
-                              child: Card(
-                                elevation: 5,
-                                shadowColor: Colors.black,
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height / 7,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(15),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        Icon(
-                                          Icons.chat,
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'Konsultasi',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'Sampaikan keluhan anda dengan bidan',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
+                        MainFeaturesWidget(),
+                        SizedBox(
                           height: 25,
                         ),
-                        const Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Rekomendasi Edukasi',
@@ -221,6 +119,9 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                       ],
                     ),
