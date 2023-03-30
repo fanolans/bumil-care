@@ -22,9 +22,8 @@ class DrawerWidget extends StatelessWidget {
             accountName: Text('Farrel Nolan Syahdony'),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.person,
-              color: Theme.of(context).colorScheme.secondary,
             ),
             title: const Text('Profil'),
             onTap: () {
@@ -32,9 +31,17 @@ class DrawerWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
+              Icons.calculate,
+            ),
+            title: const Text('Kalkulator BMI'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(
               Icons.info_outline,
-              color: Theme.of(context).colorScheme.secondary,
             ),
             title: const Text('Info'),
             onTap: () {
@@ -42,9 +49,8 @@ class DrawerWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
-              Icons.logout,
-              color: Theme.of(context).colorScheme.secondary,
+            leading: const Icon(
+              Icons.exit_to_app,
             ),
             title: const Text('Keluar'),
             onTap: () {
