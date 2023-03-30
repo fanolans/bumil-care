@@ -1,3 +1,7 @@
+import 'package:bumil_care/screens/auth_screen.dart';
+import 'package:bumil_care/screens/calculator_bmi_screen.dart';
+import 'package:bumil_care/screens/info_screen.dart';
+import 'package:bumil_care/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
@@ -33,7 +37,12 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfileScreen(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -48,7 +57,12 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CalculatorBMIScreen(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -63,7 +77,12 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const InfoScreen(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -78,7 +97,12 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AuthScreen(),
+                ),
+              );
             },
           ),
         ],
