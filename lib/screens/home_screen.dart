@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 import '../widgets/drawer_widget.dart';
+import '../widgets/info_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          'Halo,',
+                          'Halo Bumil',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -73,54 +74,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              Card(
-                elevation: 5,
-                shadowColor: Colors.black,
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  width: MediaQuery.of(context).size.height * 0.40,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: const [
-                            Text(
-                              'Usia',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('21 Tahun'),
-                          ],
-                        ),
-                        Column(
-                          children: const [
-                            Text(
-                              'BMI 20.4',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Normal'),
-                          ],
-                        ),
-                        Column(
-                          children: const [
-                            Text(
-                              'Kehamilan',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Risiko Tinggi'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              const InfoCardWidget(),
               const SizedBox(
                 height: 35,
               ),
@@ -135,20 +89,24 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       children: [
                         const Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Fitur Utama',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GestureDetector(
                               onTap: () => null,
@@ -160,11 +118,15 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: SizedBox(
-                                  height: 120,
-                                  width: 150,
+                                  height:
+                                      MediaQuery.of(context).size.height / 7,
+                                  width:
+                                      MediaQuery.of(context).size.width / 2.5,
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: const [
@@ -180,6 +142,14 @@ class HomeScreen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Ayo Prediksi Risiko pada kehamilan anda',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(fontSize: 12),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -187,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(
-                              width: 5,
+                              width: 10,
                             ),
                             GestureDetector(
                               onTap: () => null,
@@ -199,11 +169,15 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: SizedBox(
-                                  height: 120,
-                                  width: 150,
+                                  height:
+                                      MediaQuery.of(context).size.height / 7,
+                                  width:
+                                      MediaQuery.of(context).size.width / 2.5,
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: const [
@@ -219,6 +193,14 @@ class HomeScreen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Sampaikan keluhan anda dengan bidan',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(fontSize: 12),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -234,7 +216,10 @@ class HomeScreen extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Rekomendasi Edukasi',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
