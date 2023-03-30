@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InfoCardWidget extends StatelessWidget {
-  const InfoCardWidget({
+class CardInfoWidget extends StatelessWidget {
+  const CardInfoWidget({
     super.key,
   });
 
