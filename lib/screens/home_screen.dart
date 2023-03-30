@@ -16,51 +16,51 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          'Farrel Nolan Syahdony',
+          'Bumil Care',
           style: TextStyle(fontSize: 14),
         ),
       ),
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.50,
+            width: double.infinity,
+            height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('${assetImages}home-background.png'),
-                fit: BoxFit.fill,
+                image: AssetImage('${assetImages}background.jpg'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 130),
+                padding: const EdgeInsets.only(top: 100, left: 45),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.height * 0.20,
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        color: Colors.white,
-                      ),
-                      child: const Text('asasa'),
+                    const CircleAvatar(
+                      radius: 30,
+                    ),
+                    const SizedBox(
+                      width: 15,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          '25 Tahun',
+                          'Halo,',
                           style: TextStyle(
                             color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
-                          '12 Minggu Kehamilan',
+                          'Farrel Nolan Syahdony',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -73,34 +73,177 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              const Card(
-                elevation: 10,
+              Card(
+                elevation: 5,
+                shadowColor: Colors.black,
                 color: Colors.white,
-                child: Text('a'),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.height * 0.40,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: const [
+                            Text(
+                              'Usia',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text('21 Tahun'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Text(
+                              'BMI 20.4',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text('Normal'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Text(
+                              'Kehamilan',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text('Risiko Tinggi'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
-                height: 25,
+                height: 35,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Card(
-                    elevation: 10,
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
                     color: Colors.white,
-                    child: Text('a'),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30),
+                    ),
                   ),
-                  SizedBox(
-                    width: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Fitur Utama',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () => null,
+                              child: Card(
+                                elevation: 5,
+                                shadowColor: Colors.black,
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: SizedBox(
+                                  height: 120,
+                                  width: 150,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Icon(
+                                          Icons.assignment,
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Skrining',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            GestureDetector(
+                              onTap: () => null,
+                              child: Card(
+                                elevation: 5,
+                                shadowColor: Colors.black,
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: SizedBox(
+                                  height: 120,
+                                  width: 150,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Icon(
+                                          Icons.chat,
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Konsultasi',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Rekomendasi Edukasi',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Card(
-                    elevation: 10,
-                    color: Colors.white,
-                    child: Text('a'),
-                  ),
-                ],
+                ),
               )
             ],
-          )
+          ),
         ],
       ),
     );
