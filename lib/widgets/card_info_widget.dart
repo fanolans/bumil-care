@@ -12,7 +12,7 @@ class CardInfoWidget extends StatelessWidget {
       shadowColor: Colors.black,
       color: Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: SizedBox(
         height: MediaQuery.of(context).size.height / 13,
