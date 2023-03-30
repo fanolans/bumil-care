@@ -25,7 +25,13 @@ class DrawerWidget extends StatelessWidget {
             leading: const Icon(
               Icons.person,
             ),
-            title: const Text('Profil'),
+            title: const Text(
+              'Profil',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
@@ -34,7 +40,13 @@ class DrawerWidget extends StatelessWidget {
             leading: const Icon(
               Icons.calculate,
             ),
-            title: const Text('Kalkulator BMI'),
+            title: const Text(
+              'Kalkulator BMI',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
@@ -43,7 +55,13 @@ class DrawerWidget extends StatelessWidget {
             leading: const Icon(
               Icons.info_outline,
             ),
-            title: const Text('Info'),
+            title: const Text(
+              'Info',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
@@ -52,7 +70,13 @@ class DrawerWidget extends StatelessWidget {
             leading: const Icon(
               Icons.exit_to_app,
             ),
-            title: const Text('Keluar'),
+            title: const Text(
+              'Keluar',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
