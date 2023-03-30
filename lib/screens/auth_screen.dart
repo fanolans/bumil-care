@@ -72,11 +72,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                 );
               },
-              icon: const ImageIcon(
-                AssetImage(
-                  '${assetIcons}icon-google.png',
-                ),
-              ),
+              icon: Image.asset('${assetIcons}icon-google.png'),
               label: const Text('Masuk dengan Google'),
             ),
           ),
