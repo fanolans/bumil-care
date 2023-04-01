@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
+import '../widgets/articles_carousel_widget.dart';
 import '../widgets/drawer_widget.dart';
 import '../widgets/card_info_widget.dart';
 import '../widgets/main_features_widget.dart';
@@ -19,7 +20,6 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         title: const Text(
           'Bumil Care',
-          style: TextStyle(fontSize: 14),
         ),
       ),
       body: Stack(
@@ -42,8 +42,15 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const CircleAvatar(
-                      radius: 30,
+                    Material(
+                      borderRadius: BorderRadius.circular(30),
+                      elevation: 5,
+                      child: const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('${assetImages}profile.jpg'),
+                        backgroundColor: Colors.transparent,
+                        radius: 30,
+                      ),
                     ),
                     const SizedBox(
                       width: 15,
@@ -88,43 +95,44 @@ class HomeScreen extends StatelessWidget {
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30),
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black54,
+                        blurRadius: 5,
+                      ),
+                    ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      children: const [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Fitur Utama',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        MainFeaturesWidget(),
-                        SizedBox(
-                          height: 25,
-                        ),
-                        Align(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Icon(
+                        Icons.drag_handle_rounded,
+                        color: Colors.grey.shade600,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const MainFeaturesWidget(),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 20, top: 20),
+                        child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Rekomendasi Edukasi',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const ArticlesCarouselWidget(),
+                    ],
                   ),
                 ),
               )
