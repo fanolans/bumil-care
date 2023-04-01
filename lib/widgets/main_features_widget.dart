@@ -1,4 +1,7 @@
+import 'package:bumil_care/screens/screening_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/consultation_screen.dart';
 
 class MainFeaturesWidget extends StatelessWidget {
   const MainFeaturesWidget({
@@ -11,11 +14,16 @@ class MainFeaturesWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         GestureDetector(
-          onTap: () => null,
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScreeningScreen(),
+              ),
+            );
+          },
           child: Card(
-            elevation: 5,
-            shadowColor: Colors.black,
-            color: Colors.white,
+            color: Colors.grey.shade50,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -27,23 +35,24 @@ class MainFeaturesWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Icon(
                       Icons.assignment,
+                      color: Colors.blue.shade600,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'Skrining',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'Ayo Prediksi Risiko pada kehamilan anda',
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 12),
@@ -58,11 +67,16 @@ class MainFeaturesWidget extends StatelessWidget {
           width: 10,
         ),
         GestureDetector(
-          onTap: () => null,
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ConsultationScreen(),
+              ),
+            );
+          },
           child: Card(
-            elevation: 5,
-            shadowColor: Colors.black,
-            color: Colors.white,
+            color: Colors.grey.shade50,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -74,23 +88,24 @@ class MainFeaturesWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Icon(
                       Icons.chat,
+                      color: Colors.blue.shade600,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'Konsultasi',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'Sampaikan keluhan anda dengan bidan',
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 12),
