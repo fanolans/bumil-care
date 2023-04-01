@@ -16,7 +16,11 @@ class DrawerWidget extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const UserAccountsDrawerHeader(
-            currentAccountPicture: CircleAvatar(),
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: AssetImage('${assetImages}profile.jpg'),
+              backgroundColor: Colors.transparent,
+              radius: 30,
+            ),
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("${assetImages}background.jpg"),
