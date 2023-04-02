@@ -1,5 +1,5 @@
 import 'package:bumil_care/screens/auth_screen.dart';
-import 'package:bumil_care/screens/calculator_bmi_screen.dart';
+import 'package:bumil_care/screens/bmi_calculator_screen.dart';
 import 'package:bumil_care/screens/info_screen.dart';
 import 'package:bumil_care/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +64,7 @@ class DrawerWidget extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CalculatorBMIScreen(),
+                  builder: (context) => const BMICalculatorScreen(),
                 ),
               );
             },
