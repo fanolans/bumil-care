@@ -1,24 +1,42 @@
-class BMICalculatorServices {
-  var result = '';
-  var description = '';
+import 'dart:math';
 
-  bmiResult(weight, height) {
-    double bmi = (weight / (height * height)) * 10000;
-    if (bmi < 18.5) {
-      result = 'Underweight';
-      description = 'Anda memiliki berat badan Underweight';
-    }
-    if (bmi >= 18.5 && bmi < 25) {
-      result = 'Normal';
-      description = 'Anda memiliki berat badan Normal';
-    }
-    if (bmi > 25 && bmi <= 29.00) {
-      result = 'Overweight';
-      description = 'Anda memiliki berat badan Overweight';
+class BMICalculatorServices {
+  BMICalculatorServices({
+    required this.height,
+    required this.weight,
+  });
+
+  final int height;
+  final int weight;
+
+  double? _bmi;
+
+  String calculateBMI() {
+    _bmi = weight / pow(height / 100, 2);
+    return _bmi!.toStringAsFixed(1);
+  }
+
+  String getResult() {
+    if (_bmi! < 18.5) {
+      return 'Kurang';
+    } else if (_bmi! >= 18.5 && _bmi! < 25) {
+      return 'Normal';
+    } else if (_bmi! >= 25 && _bmi! <= 30) {
+      return 'Kegemukan';
     } else {
-      result = 'Obesitas';
-      description = 'Anda memiliki berat badan Obesitas';
+      return 'Obesitas';
     }
-    return bmi.round();
+  }
+
+  String getRecommendation() {
+    if (_bmi! < 18.5) {
+      return 'Anda memiliki berat badan yang lebih rendah dari normal. Anda dapat makan sedikit lebih banyak.';
+    } else if (_bmi! >= 18.5 && _bmi! < 25) {
+      return 'Anda memiliki berat badan normal. Good job!';
+    } else if (_bmi! >= 25 && _bmi! <= 30) {
+      return 'Anda memiliki berat badan yang lebih dari normal. Cobalah untuk lebih banyak berolahraga.';
+    } else {
+      return 'Anda memiliki berat badan obesitas. Cobalah untuk lebih banyak berolahraga.';
+    }
   }
 }
