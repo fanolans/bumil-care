@@ -1,4 +1,8 @@
+import 'package:bumil_care/services/bmi_calculator_service.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/constants.dart';
+import 'bmi_result_screen.dart';
 
 class BMICalculatorScreen extends StatefulWidget {
   const BMICalculatorScreen({super.key});
@@ -9,34 +13,10 @@ class BMICalculatorScreen extends StatefulWidget {
 
 class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
   int age = 17;
-  int weight = 50;
+  int weight = 60;
   int height = 180;
-  double maxHeight = 220;
   double minHeight = 120;
-
-  void ageIncrement() {
-    setState(() {
-      age++;
-    });
-  }
-
-  void ageDecrement() {
-    setState(() {
-      age--;
-    });
-  }
-
-  void weightIncrement() {
-    setState(() {
-      weight++;
-    });
-  }
-
-  void weightDecrement() {
-    setState(() {
-      weight--;
-    });
-  }
+  double maxHeight = 220;
 
   @override
   Widget build(BuildContext context) {
@@ -79,15 +59,22 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
-                            '$height',
-                            style: const TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const Text(
-                            'cm',
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                height.toString(),
+                                style: const TextStyle(
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const Text(
+                                'cm',
+                              ),
+                            ],
                           ),
                           Slider(
                             value: height.toDouble(),
@@ -99,9 +86,6 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                               setState(() {
                                 height = newValue.round();
                               });
-                            },
-                            semanticFormatterCallback: (double newValue) {
-                              return '$newValue.round()';
                             },
                           ),
                         ],
@@ -136,54 +120,48 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text(
-                                '$weight',
-                                style: const TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const Text(
-                                'kg',
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.baseline,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    weight.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const Text(
+                                    'kg',
+                                  ),
+                                ],
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  InkWell(
-                                    onTap: weightDecrement,
-                                    child: Container(
-                                      height: 40.0,
-                                      width: 40.0,
-                                      margin: const EdgeInsets.all(10.0),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.blue.shade600),
-                                      child: const Center(
-                                        child: Text(
-                                          "-",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        weight--;
+                                      });
+                                    },
+                                    icon: Image.asset(
+                                      '${assetIcons}icon-minus-key.png',
+                                      color: Colors.blue.shade600,
                                     ),
                                   ),
-                                  Container(
-                                    height: 40.0,
-                                    width: 40.0,
-                                    margin: const EdgeInsets.all(10.0),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: Colors.blue.shade600),
-                                    child: InkWell(
-                                      onTap: weightIncrement,
-                                      child: const Center(
-                                        child: Text(
-                                          "+",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        weight++;
+                                      });
+                                    },
+                                    icon: Image.asset(
+                                      '${assetIcons}icon-plus-key.png',
+                                      color: Colors.blue.shade600,
                                     ),
-                                  )
+                                  ),
                                 ],
                               )
                             ],
@@ -212,54 +190,48 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text(
-                                '$age',
-                                style: const TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const Text(
-                                'tahun',
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.baseline,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    age.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const Text(
+                                    'th',
+                                  ),
+                                ],
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  InkWell(
-                                    onTap: weightDecrement,
-                                    child: Container(
-                                      height: 40.0,
-                                      width: 40.0,
-                                      margin: const EdgeInsets.all(10.0),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.blue.shade600),
-                                      child: const Center(
-                                        child: Text(
-                                          "-",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        age--;
+                                      });
+                                    },
+                                    icon: Image.asset(
+                                      '${assetIcons}icon-minus-key.png',
+                                      color: Colors.blue.shade600,
                                     ),
                                   ),
-                                  Container(
-                                    height: 40.0,
-                                    width: 40.0,
-                                    margin: const EdgeInsets.all(10.0),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: Colors.blue.shade600),
-                                    child: InkWell(
-                                      onTap: weightIncrement,
-                                      child: const Center(
-                                        child: Text(
-                                          "+",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        age++;
+                                      });
+                                    },
+                                    icon: Image.asset(
+                                      '${assetIcons}icon-plus-key.png',
+                                      color: Colors.blue.shade600,
                                     ),
-                                  )
+                                  ),
                                 ],
                               )
                             ],
@@ -274,7 +246,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
           ),
           Positioned(
             bottom: 40,
-            child: ElevatedButton.icon(
+            child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(
                   MediaQuery.of(context).size.width / 1.3,
@@ -288,9 +260,23 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              onPressed: () {},
-              icon: const Icon(Icons.calculate),
-              label: const Text('Hitung BMI'),
+              onPressed: () {
+                BMICalculatorServices bmi = BMICalculatorServices(
+                  height: height,
+                  weight: weight,
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BMIResultScreen(
+                      bmiResult: bmi.calculateBMI(),
+                      resultText: bmi.getResult(),
+                      recommendation: bmi.getRecommendation(),
+                    ),
+                  ),
+                );
+              },
+              child: const Text('Hitung'),
             ),
           ),
         ],
