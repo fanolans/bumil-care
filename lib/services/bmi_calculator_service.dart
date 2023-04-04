@@ -18,7 +18,7 @@ class BMICalculatorServices {
 
   String getResult() {
     if (_bmi! < 18.5) {
-      return 'Kurang';
+      return 'Kurus';
     } else if (_bmi! >= 18.5 && _bmi! < 25) {
       return 'Normal';
     } else if (_bmi! >= 25 && _bmi! <= 30) {
