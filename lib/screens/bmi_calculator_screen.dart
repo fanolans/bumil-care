@@ -12,7 +12,7 @@ class BMICalculatorScreen extends StatefulWidget {
 }
 
 class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
-  int age = 17;
+  int age = 25;
   int weight = 60;
   int height = 180;
   double minHeight = 120;
@@ -80,7 +80,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                             value: height.toDouble(),
                             min: minHeight,
                             max: maxHeight,
-                            activeColor: Colors.blue.shade600,
+                            activeColor: Colors.blue.shade300,
                             inactiveColor: Colors.grey,
                             onChanged: (double newValue) {
                               setState(() {
@@ -148,7 +148,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     },
                                     icon: Image.asset(
                                       '${assetIcons}icon-minus-key.png',
-                                      color: Colors.blue.shade600,
+                                      color: Colors.blue.shade300,
                                     ),
                                   ),
                                   IconButton(
@@ -159,7 +159,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     },
                                     icon: Image.asset(
                                       '${assetIcons}icon-plus-key.png',
-                                      color: Colors.blue.shade600,
+                                      color: Colors.blue.shade300,
                                     ),
                                   ),
                                 ],
@@ -218,7 +218,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     },
                                     icon: Image.asset(
                                       '${assetIcons}icon-minus-key.png',
-                                      color: Colors.blue.shade600,
+                                      color: Colors.blue.shade300,
                                     ),
                                   ),
                                   IconButton(
@@ -229,7 +229,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                                     },
                                     icon: Image.asset(
                                       '${assetIcons}icon-plus-key.png',
-                                      color: Colors.blue.shade600,
+                                      color: Colors.blue.shade300,
                                     ),
                                   ),
                                 ],
@@ -253,7 +253,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                   MediaQuery.of(context).size.height / 15,
                 ),
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.blue.shade600,
+                backgroundColor: Colors.blue.shade300,
                 shadowColor: Colors.black,
                 elevation: 5,
                 shape: RoundedRectangleBorder(
