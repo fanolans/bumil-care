@@ -25,9 +25,14 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            color: Colors.blue.shade300,
             width: double.infinity,
             height: double.infinity,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('${assetImages}home-background.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,

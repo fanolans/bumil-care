@@ -15,17 +15,20 @@ class DrawerWidget extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(
-            currentAccountPicture: const CircleAvatar(
+          const UserAccountsDrawerHeader(
+            currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage('${assetImages}profile.jpg'),
               backgroundColor: Colors.transparent,
               radius: 30,
             ),
             decoration: BoxDecoration(
-              color: Colors.blue.shade300,
+              image: DecorationImage(
+                image: AssetImage('${assetImages}home-background.png'),
+                fit: BoxFit.cover,
+              ),
             ),
-            accountEmail: const Text('mailenolan@gmail.com'),
-            accountName: const Text('Farrel Nolan Syahdony'),
+            accountEmail: Text('mailenolan@gmail.com'),
+            accountName: Text('Farrel Nolan Syahdony'),
           ),
           ListTile(
             leading: const Icon(
