@@ -8,7 +8,7 @@ class CardInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 10,
+      elevation: 5,
       shadowColor: Colors.black,
       color: Colors.white,
       shape: RoundedRectangleBorder(
