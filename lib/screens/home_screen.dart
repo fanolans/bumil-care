@@ -8,6 +8,19 @@ import '../widgets/main_features_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+  String greetingMessages() {
+    var hour = DateTime.now().hour;
+
+    if (hour <= 10) {
+      return 'Selamat Pagi';
+    } else if ((hour > 10) && (hour <= 15)) {
+      return 'Selamat Siang';
+    } else if ((hour > 15) && (hour < 18)) {
+      return 'Selamat Sore';
+    } else {
+      return 'Selamat Malam';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +39,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: double.infinity,
+            height: MediaQuery.of(context).size.height / 2.4,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('${assetImages}home-background.png'),
@@ -57,18 +70,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
-                          'Halo Bumil',
-                          style: TextStyle(
+                          greetingMessages(),
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        Text(
+                        const Text(
                           'Farrel Nolan Syahdony',
                           style: TextStyle(
                             color: Colors.white,
@@ -95,12 +108,6 @@ class HomeScreen extends StatelessWidget {
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30),
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black54,
-                        blurRadius: 5,
-                      ),
-                    ],
                   ),
                   child: Column(
                     children: [
@@ -120,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'Rekomendasi Edukasi',
+                            'Edukasi Preeklamsi',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
