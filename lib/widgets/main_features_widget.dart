@@ -38,7 +38,7 @@ class MainFeaturesWidget extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.assignment,
-                      color: Colors.blue.shade300,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     const SizedBox(
                       height: 5,
@@ -91,7 +91,7 @@ class MainFeaturesWidget extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.chat,
-                      color: Colors.blue.shade300,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     const SizedBox(
                       height: 5,
