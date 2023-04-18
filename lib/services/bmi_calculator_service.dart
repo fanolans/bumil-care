@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class BMICalculatorServices {
   BMICalculatorServices({
     required this.height,
@@ -12,7 +10,7 @@ class BMICalculatorServices {
   double? _bmi;
 
   String calculateBMI() {
-    _bmi = weight / pow(height / 100, 2);
+    _bmi = weight / ((height / 100) * (height / 100));
     return _bmi!.toStringAsFixed(1);
   }
 
