@@ -16,7 +16,7 @@ class HomeBottomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 6,
-        foregroundColor: Colors.blue.shade800,
+        foregroundColor: Colors.red.shade300,
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -31,7 +31,7 @@ class HomeBottomButton extends StatelessWidget {
           Icon(
             Icons.assignment,
             size: 32,
-            color: Colors.blue.shade900,
+            color: Colors.red.shade300,
           ),
           const SizedBox(
             height: 16,

@@ -24,8 +24,8 @@ class QuizBottomNavbar extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.blue.shade900,
-                  Colors.blue.shade700,
+                  Colors.red.shade300,
+                  Colors.red.shade200,
                   //add more colors
                 ],
               ),
@@ -64,7 +64,7 @@ class QuizBottomNavbar extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               side: BorderSide(
                 width: 2.5,
-                color: Colors.blue.shade700,
+                color: Colors.red.shade300,
               ),
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
@@ -79,7 +79,7 @@ class QuizBottomNavbar extends StatelessWidget {
               'Tidak',
               style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width / 24,
-                color: Colors.blue.shade700,
+                color: Colors.red.shade300,
                 fontWeight: FontWeight.bold,
               ),
             ),

@@ -86,18 +86,18 @@ class _HomePageState extends State<HomePage> {
         end: Alignment.bottomRight,
         stops: const [0.0, 1.0],
         colors: [
-          Colors.blue.shade800,
-          Colors.blue.shade500,
+          Colors.red.shade300,
+          Colors.red.shade100,
         ],
       ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: const Text(
-          'Quiz Care',
+          'Bumil Care',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 24,
+            fontSize: 20,
           ),
         ),
         actions: [
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             HomeUserProfileCard(
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
               imagePath: user.photoURL ?? 'https://i.pravatar.cc/300',
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 18,
+              height: MediaQuery.of(context).size.height / 24,
             ),
             HomeTopButton(
               name: isLoading ? 'Loading...' : resikoValue,
@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       backgroundColor: Colors.green,
-                      content: Text('Belum ada hasil, silahkan ambil quiz'),
+                      content: Text('Belum ada hasil, silahkan skrining dulu'),
                     ),
                   );
                 } else {

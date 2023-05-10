@@ -27,8 +27,8 @@ class _LoginPageState extends State<LoginPage> {
         end: Alignment.bottomRight,
         stops: const [0.0, 1.0],
         colors: [
-          Colors.blue.shade800,
-          Colors.blue.shade500,
+          Colors.red.shade300,
+          Colors.red.shade100,
         ],
       ),
       body: BlocListener<AuthCubit, AuthState>(
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     StringConstant.firstLine,
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.width / 13,
+                      fontSize: MediaQuery.of(context).size.width / 16,
                       color: Colors.white,
                     ),
                   ),

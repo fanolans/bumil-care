@@ -30,7 +30,7 @@ class QuizTypeOnePage extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       appBar: AppBarDefault(
-        title: 'Quiz',
+        title: 'Skrining',
       ),
       body: Column(
         children: [
