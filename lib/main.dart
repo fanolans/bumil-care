@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         theme: FlexThemeData.light(
-          scheme: FlexScheme.deepBlue,
+          scheme: FlexScheme.sakura,
           textTheme: GoogleFonts.robotoTextTheme(),
           appBarStyle: FlexAppBarStyle.surface,
         ),
