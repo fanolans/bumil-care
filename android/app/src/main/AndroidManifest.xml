@@ -2,7 +2,7 @@
     package="com.example.flutter_quiz">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="flutter_quiz"
+        android:label="Bumil Care"
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
