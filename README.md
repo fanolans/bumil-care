@@ -1,23 +1,13 @@
-# flutter_quiz
+# Bumil Care
 
-A new Flutter project.
+Mobile application for prediction and monitoring of early-onset preeclampsia in pregnant women.
 
-## Getting Started
+## Features
 
-```
-cd android
-gradlew signingReport
-```
+- Screening Prediction
+- Education
+- Consultation
 
-```
-copy SHA1 to firebase
-https://console.firebase.google.com/u/0/project/quiz-care/settings/general/android:com.example.flutter_quiz
-copy SHA-256 to firebase
-https://console.firebase.google.com/u/0/project/quiz-care/settings/general/android:com.example.flutter_quiz
-```
+## Appendix
 
-```
-```
-untuk generate model freezed:
-flutter pub run build_runner build --delete-conflicting-outputs
-```
+This application project is in the development stage
