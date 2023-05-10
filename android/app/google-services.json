@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "514788747095",
+    "firebase_url": "https://quiz-care-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "quiz-care",
+    "storage_bucket": "quiz-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514788747095:android:47cf8732c002bcd6ed8012",
+        "android_client_info": {
+          "package_name": "com.example.flutter_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514788747095-1quqmi8u3b0lk45ftbbn7747tlgrdku9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2cXzdQcp7zmz800e_BQ5q5b2_Apiabu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514788747095-1khvgl6i9bkskndvvicborbf82aba5qb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
