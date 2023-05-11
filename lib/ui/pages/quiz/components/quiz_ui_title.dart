@@ -15,7 +15,7 @@ class QuizTitle extends StatelessWidget {
         title,
         textAlign: TextAlign.center,
         style: const TextStyle(
-          fontSize: 14,
+          fontSize: 16,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),

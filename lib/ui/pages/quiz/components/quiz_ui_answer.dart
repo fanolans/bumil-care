@@ -20,7 +20,7 @@ class QuizAnswer extends StatelessWidget {
           Text(
             quizAnswerTitle,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 14,
               color: Colors.black,
               fontWeight: FontWeight.bold,
             ),
@@ -28,7 +28,7 @@ class QuizAnswer extends StatelessWidget {
           Text(
             quizAnswerProgress,
             style: const TextStyle(
-              fontSize: 12,
+              fontSize: 14,
               color: Colors.black54,
             ),
           ),

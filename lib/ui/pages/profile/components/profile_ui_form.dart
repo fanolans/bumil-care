@@ -52,7 +52,7 @@ class _ProfileFormState extends State<ProfileForm> {
         children: [
           Center(
             child: CircleAvatar(
-              radius: 50,
+              radius: 40,
               backgroundImage: NetworkImage(widget.account.photoURL),
             ),
           ),
@@ -63,7 +63,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileEmailLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeTextField(
             controller: widget.emailController,
@@ -78,7 +78,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileNameLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeTextField(
             hintText: '',
@@ -93,7 +93,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileDateOfBirthLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeDatePicker(
             name: 'date',
@@ -111,7 +111,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileAgeLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeTextField(
             hintText: '',
@@ -126,7 +126,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileHeightLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeTextField(
             hintText: '',
@@ -141,7 +141,7 @@ class _ProfileFormState extends State<ProfileForm> {
             name: StringConstant.profileWeightLabel,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 500,
           ),
           FleetimeTextField(
             hintText: '',
@@ -189,7 +189,7 @@ class FleetimeDatePicker extends StatelessWidget {
       initialEntryMode: DatePickerEntryMode.calendarOnly,
       style: const TextStyle(
         color: Colors.black,
-        fontSize: 24,
+        fontSize: 16,
       ),
       keyboardType: TextInputType.datetime,
       format: DateFormat('EEEE, dd MMMM yyyy', 'id'),
@@ -210,7 +210,7 @@ class FleetimeDatePicker extends StatelessWidget {
         ),
         hintStyle: const TextStyle(
           color: Colors.grey,
-          fontSize: 24,
+          fontSize: 16,
         ),
       ),
     );

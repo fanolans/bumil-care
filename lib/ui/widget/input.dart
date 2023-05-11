@@ -26,14 +26,14 @@ class FleetimeTextField extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: TextInputAction.done,
       style: const TextStyle(
-        fontSize: 24,
+        fontSize: 16,
         color: Colors.black,
       ),
       decoration: InputDecoration(
         filled: false,
         hintText: hintText,
         hintStyle: const TextStyle(
-          fontSize: 24,
+          fontSize: 16,
           color: Colors.grey,
         ),
         contentPadding: const EdgeInsets.all(0),

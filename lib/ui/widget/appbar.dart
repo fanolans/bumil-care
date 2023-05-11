@@ -12,7 +12,7 @@ class AppBarDefault extends AppBar {
             title,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 28.0,
+              fontSize: 20,
               letterSpacing: 0.5,
             ),
           ),
