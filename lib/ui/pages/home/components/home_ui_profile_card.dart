@@ -14,6 +14,20 @@ class HomeUserProfileCard extends StatelessWidget {
   final String name;
   final String imagePath;
 
+  String greetingMessages() {
+    var hour = DateTime.now().hour;
+
+    if (hour <= 10) {
+      return 'Selamat Pagi';
+    } else if ((hour > 10) && (hour <= 15)) {
+      return 'Selamat Siang';
+    } else if ((hour > 15) && (hour < 18)) {
+      return 'Selamat Sore';
+    } else {
+      return 'Selamat Malam';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -52,10 +66,11 @@ class HomeUserProfileCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                StringConstant.homeHello,
-                style: TextStyle(
-                  fontSize: 24,
+              Text(
+                greetingMessages(),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
@@ -65,8 +80,7 @@ class HomeUserProfileCard extends StatelessWidget {
               Text(
                 name,
                 style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                   color: Colors.white,
                 ),
               ),
