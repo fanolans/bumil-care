@@ -1,14 +1,19 @@
 class StringConstant {
   // Login Constant
   static const String firstLine = 'Selamat Datang di';
-  static const String secondLine = 'Quiz Care';
+  static const String secondLine = 'Bumil Care';
   static const String loginWithGoogle = 'Masuk dengan Google';
 
   // Home Constant
   static const String homeHello = 'Halo,';
-  static const String homeName = 'Novian Andika';
+  static const String homeName = 'Farrel Nolan';
   static const String homeHighRisk = 'Risiko Tinggi';
-  static const String homeStartQuiz = 'Mulai Quiz';
+  static const String homeStartQuiz = 'Skrining';
+  static const String homeScreeningButton =
+      'Ayo Prediksi Risiko pada kehamilan anda';
+  static const String homeConsultationButtonTitle = 'Konsultasi';
+  static const String homeConsultationButton =
+      'Sampaikan keluhan anda dengan bidan';
 
   // Quiz Constant
   static const String quizTitle = 'Quiz';
@@ -23,7 +28,7 @@ Sumber : Espinoza dkk., 2020
       'Usia saya saat ini lebih dari atau sama dengan 35 tahun';
 
   // Quiz 2 Constant
-  static const String quiz2Title = 'Quiz';
+  static const String quiz2Title = 'Skrining';
   static const String quiz2ContentTitle = 'MAP';
   static const String quiz2ContentProgress = '2/5';
   static const String quiz2Content = '''
@@ -35,7 +40,7 @@ Sumber: Musyoka dkk., 2019; Kolifah & Agung Mulyaningsih, 2020
   static const String quiz2Subtitile = '"Contoh 120 / 80"';
 
 // Quiz 3 Constant
-  static const String quiz3Title = 'Quiz';
+  static const String quiz3Title = 'Skrining';
   static const String quiz3ContentTitle = 'Obesitas';
   static const String quiz3ContentProgress = '3/5';
   static const String quiz3Content = '''
