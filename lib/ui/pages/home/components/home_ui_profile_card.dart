@@ -1,7 +1,6 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/constant/string_constant.dart';
 import '../../profile/profile_ui.dart';
 
 class HomeUserProfileCard extends StatelessWidget {
