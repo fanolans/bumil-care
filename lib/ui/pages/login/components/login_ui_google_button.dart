@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 
+import '../../../../common/constant/assets_constant.dart';
 import '../../../../common/constant/string_constant.dart';
 
 class LoginGoogleButton extends StatelessWidget {
@@ -36,10 +36,15 @@ class LoginGoogleButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/home_google.png',
+                '${assetIcons}icon-google.png',
                 height: 25,
                 fit: BoxFit.contain,
               ),
+              // Image.asset(
+              //   'assets/images/home_google.png',
+              //   height: 25,
+              //   fit: BoxFit.contain,
+              // ),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 20,
               ),
