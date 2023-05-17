@@ -95,7 +95,7 @@ class FirebaseDatabaseDatasource {
   }
 
   Future<List<Education>> getEducations() async {
-    final listEducations = <Education>[];
+    final listEducation = <Education>[];
     final snapshot =
         await FirebaseDatabase.instance.ref().child("educations").once();
     final data = snapshot.snapshot.value as List<Object?>;
@@ -107,10 +107,10 @@ class FirebaseDatabaseDatasource {
             newMap[key] = value;
           }
         });
-        listEducations.add(Education.fromMap(newMap));
+        listEducation.add(Education.fromMap(newMap));
       }
     }
 
-    return listEducations;
+    return listEducation;
   }
 }
