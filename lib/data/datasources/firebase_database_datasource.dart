@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_quiz/data/models/account.dart';
+import 'package:flutter_quiz/data/models/education.dart';
 import 'package:flutter_quiz/data/models/quiz_answer.dart';
 
 import '../models/quiz.dart';
@@ -91,5 +92,25 @@ class FirebaseDatabaseDatasource {
         .child(id)
         .child('result')
         .set(data);
+  }
+
+  Future<List<Education>> getEducations() async {
+    final listEducations = <Education>[];
+    final snapshot =
+        await FirebaseDatabase.instance.ref().child("educations").once();
+    final data = snapshot.snapshot.value as List<Object?>;
+    for (var item in data) {
+      if (item is Map) {
+        Map<String, dynamic> newMap = {};
+        item.forEach((key, value) {
+          if (key is String) {
+            newMap[key] = value;
+          }
+        });
+        listEducations.add(Education.fromMap(newMap));
+      }
+    }
+
+    return listEducations;
   }
 }
