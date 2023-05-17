@@ -26,6 +26,7 @@ dependencies:
   responsive_framework: ^1.0.0
   scaffold_gradient_background: ^1.0.3+1
   shared_preferences: ^2.1.0
+  introduction_screen: ^3.1.8
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -38,4 +39,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/icons/
