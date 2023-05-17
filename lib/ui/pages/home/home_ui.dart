@@ -16,7 +16,9 @@ import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 import '../../../common/constant/string_constant.dart';
 import '../../../data/models/account.dart';
-import 'components/home_ui_bottom_button.dart';
+import 'components/home_ui_consultation_button.dart';
+import 'components/home_ui_drawer.dart';
+import 'components/home_ui_screening_button.dart';
 import 'components/home_ui_profile_card.dart';
 import 'components/home_ui_top_button.dart';
 
@@ -80,6 +82,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
     return ScaffoldGradientBackground(
+      drawer: const HomeDrawer(),
       extendBody: true,
       gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -92,6 +95,7 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        centerTitle: true,
         title: const Text(
           'Bumil Care',
           style: TextStyle(
@@ -100,107 +104,167 @@ class _HomePageState extends State<HomePage> {
             fontSize: 20,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const ProfilePage();
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) {
+        //             return const ProfilePage();
+        //           },
+        //         ),
+        //       );
+        //     },
+        //     icon: const Icon(
+        //       Icons.account_circle,
+        //       color: Colors.white,
+        //       size: 32,
+        //     ),
+        //   ),
+        //   IconButton(
+        //     onPressed: () {
+        //       context.read<AuthCubit>().signOut();
+
+        //       // Temporary solution
+        //       Navigator.pushAndRemoveUntil(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => const LoginPage(),
+        //         ),
+        //         (route) => false,
+        //       );
+        //     },
+        //     icon: const Icon(
+        //       Icons.logout,
+        //       color: Colors.white,
+        //       size: 32,
+        //     ),
+        //   ),
+        // ],
+      ),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                HomeUserProfileCard(
+                  name: user.displayName ?? 'User',
+                  imagePath: user.photoURL ?? 'https://i.pravatar.cc/300',
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 55,
+                ),
+                HomeTopButton(
+                  name: isLoading ? 'Loading...' : resikoValue,
+                  onPressed: () {
+                    if (resikoValue == 'Belum ada hasil') {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          backgroundColor: Colors.green,
+                          content:
+                              Text('Belum ada hasil, silahkan skrining dulu'),
+                        ),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ResultPage();
+                          },
+                        ),
+                      );
+                    }
                   },
                 ),
-              );
-            },
-            icon: const Icon(
-              Icons.account_circle,
-              color: Colors.white,
-              size: 32,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 15,
+                ),
+              ],
             ),
           ),
-          IconButton(
-            onPressed: () {
-              context.read<AuthCubit>().signOut();
-
-              // Temporary solution
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
-                ),
-                (route) => false,
-              );
-            },
-            icon: const Icon(
-              Icons.logout,
+          Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height / 1.7,
+            decoration: const BoxDecoration(
               color: Colors.white,
-              size: 32,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                topLeft: Radius.circular(30),
+              ),
+            ),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 5,
+                ),
+                Icon(
+                  Icons.drag_handle_rounded,
+                  color: Colors.grey.shade600,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    HomeScreeningButton(
+                      name: StringConstant.homeStartQuiz,
+                      onPressed: () async {
+                        if (!await checkEligbleTakeQuiz()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text(
+                                  'Lengkapi dulu data pribadi anda di halaman profil'),
+                            ),
+                          );
+                          return;
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const QuizUi();
+                              },
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    HomeConsultationButton(
+                      name: StringConstant.homeStartQuiz,
+                      onPressed: () async {
+                        if (!await checkEligbleTakeQuiz()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text(
+                                  'Lengkapi dulu data pribadi anda di halaman profil'),
+                            ),
+                          );
+                          return;
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const QuizUi();
+                              },
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            HomeUserProfileCard(
-              name: user.displayName ?? 'User',
-              imagePath: user.photoURL ?? 'https://i.pravatar.cc/300',
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 24,
-            ),
-            HomeTopButton(
-              name: isLoading ? 'Loading...' : resikoValue,
-              onPressed: () {
-                if (resikoValue == 'Belum ada hasil') {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: Colors.green,
-                      content: Text('Belum ada hasil, silahkan skrining dulu'),
-                    ),
-                  );
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const ResultPage();
-                      },
-                    ),
-                  );
-                }
-              },
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 15,
-            ),
-            HomeBottomButton(
-              name: StringConstant.homeStartQuiz,
-              onPressed: () async {
-                if (!await checkEligbleTakeQuiz()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: Colors.red,
-                      content: Text(
-                          'Lengkapi dulu data pribadi anda di halaman profil'),
-                    ),
-                  );
-                  return;
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const QuizUi();
-                      },
-                    ),
-                  );
-                }
-              },
-            ),
-          ],
-        ),
       ),
     );
   }
