@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
 
 import 'package:flutter_quiz/common/constant/string_constant.dart';
 import 'package:flutter_quiz/common/utils/formula.dart';

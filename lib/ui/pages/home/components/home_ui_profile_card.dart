@@ -68,8 +68,7 @@ class HomeUserProfileCard extends StatelessWidget {
               Text(
                 greetingMessages(),
                 style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
                   color: Colors.white,
                 ),
               ),
@@ -79,7 +78,8 @@ class HomeUserProfileCard extends StatelessWidget {
               Text(
                 name,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),

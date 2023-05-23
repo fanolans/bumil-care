@@ -27,7 +27,12 @@ class HomeDrawer extends StatelessWidget {
                 Colors.red.shade200,
               ],
             )),
-            child: const Text("Header"),
+            child: const Text(
+              'Bumil Care',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
           ListTile(
             leading: const Icon(

@@ -1,6 +1,5 @@
 import 'package:flutter_quiz/data/models/account.dart';
 import 'package:flutter_quiz/data/models/quiz_answer.dart';
-import 'package:flutter_quiz/ui/pages/quiz/components/quiz_ui_answer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesData {

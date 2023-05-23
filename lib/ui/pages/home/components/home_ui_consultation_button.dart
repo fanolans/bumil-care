@@ -16,7 +16,7 @@ class HomeConsultationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height / 7,
-      width: MediaQuery.of(context).size.width / 2.5,
+      width: MediaQuery.of(context).size.width / 2.4,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -60,7 +60,7 @@ class HomeConsultationButton extends StatelessWidget {
               textAlign: TextAlign.left,
               style: TextStyle(
                 letterSpacing: 0,
-                fontSize: 11,
+                fontSize: 12,
                 color: Colors.black,
               ),
             ),
