@@ -11,12 +11,12 @@ class StringConstant {
   static const String homeStartQuiz = 'Skrining';
   static const String homeScreeningButton =
       'Ayo Prediksi Risiko pada kehamilan anda';
-  static const String homeConsultationButtonTitle = 'Konsultasi';
+  static const String homeConsultationButtonTitle = 'Pemantauan';
   static const String homeConsultationButton =
       'Sampaikan keluhan anda dengan bidan';
 
   // Quiz Constant
-  static const String quizTitle = 'Quiz';
+  static const String quizTitle = 'Skrining';
   static const String quizContentTitle = 'Umur';
   static const String quizContentProgress = '1/5';
   static const String quizContent = '''
@@ -60,8 +60,8 @@ Sumber: Karrar. S. A, 2023
   static const String profileButton = 'Simpan';
 
   // Result Constant
-  static const String resultTitle = 'Hasil Quiz';
-  static const String resultSubtitle = 'Detail Hasil';
+  static const String resultTitle = 'Hasil Skrining';
+  static const String resultSubtitle = 'Detail Hasil:';
 
   static const String resultTileContent = '''
 Sebaiknya anda menerapkan pola gaya hidup sehat:

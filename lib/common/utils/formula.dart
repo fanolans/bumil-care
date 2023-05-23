@@ -36,10 +36,10 @@ class Formula {
   }
 
   static String resultResiko(List<int> listScore) {
-    String result = 'Resiko Rendah';
+    String result = 'Risiko Rendah';
     int totalScore = listScore.reduce((value, element) => value + element);
     if (totalScore > 0) {
-      result = 'Resiko Tinggi';
+      result = 'Risiko Tinggi';
     }
     return result;
   }
