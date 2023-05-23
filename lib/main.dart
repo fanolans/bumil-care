@@ -3,10 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_quiz/common/utils/providers.dart';
 import 'package:flutter_quiz/firebase_options.dart';
 import 'package:flutter_quiz/ui/pages/home/home_ui.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_quiz/introduction.dart';
 import 'package:flutter_quiz/ui/pages/login/login_ui.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,12 +16,15 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await initIntroduction();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FirebaseDatabase.instance.setPersistenceEnabled(true);
   FirebaseDatabase.instance.ref().keepSynced(true);
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent),
+  );
   runApp(const MainApp());
 }
 
@@ -57,7 +62,9 @@ class MainApp extends StatelessWidget {
             } else if (snapshot.hasData) {
               return const HomePage();
             } else {
-              return const LoginPage();
+              return introduction == 0
+                  ? const Introduction()
+                  : const LoginPage();
             }
           },
         ),
