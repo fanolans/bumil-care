@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../common/constant/assets_constant.dart';
 import '../../../../cubit/auth/auth_cubit.dart';
-import '../../education/component/edu.dart';
 import '../../login/login_ui.dart';
 import '../../profile/profile_ui.dart';
 
@@ -17,21 +17,18 @@ class HomeDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              stops: const [0.0, 1.0],
-              colors: [
-                Colors.red.shade300,
-                Colors.red.shade200,
-              ],
-            )),
-            child: const Text(
+              image: DecorationImage(
+                image: AssetImage('${assetImages}home-background.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Text(
               'Bumil Care',
               style: TextStyle(
                 color: Colors.white,
+                fontSize: 16,
               ),
             ),
           ),
@@ -51,26 +48,6 @@ class HomeDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const ProfilePage(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.person,
-            ),
-            title: const Text(
-              'Education',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Edu(),
                 ),
               );
             },
