@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quiz/cubit/education/education_cubit.dart';
 
-import 'component/item_widget.dart';
+import 'component/education_ui_list.dart';
 
 class EducationPage extends StatelessWidget {
   const EducationPage({
@@ -24,7 +24,7 @@ class EducationPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               var educations = state.educations[index];
-              return ItemWidget(education: educations);
+              return EducationList(education: educations);
             },
             itemCount: state.educations.length,
           );
