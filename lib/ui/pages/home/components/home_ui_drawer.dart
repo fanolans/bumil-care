@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../cubit/auth/auth_cubit.dart';
+import '../../education/component/edu.dart';
 import '../../login/login_ui.dart';
 import '../../profile/profile_ui.dart';
 
@@ -50,6 +51,26 @@ class HomeDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const ProfilePage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.person,
+            ),
+            title: const Text(
+              'Education',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Edu(),
                 ),
               );
             },

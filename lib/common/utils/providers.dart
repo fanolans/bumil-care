@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quiz/cubit/auth/auth_cubit.dart';
+import 'package:flutter_quiz/cubit/education/education_cubit.dart';
 import 'package:flutter_quiz/cubit/quiz/quiz_cubit.dart';
 import 'package:flutter_quiz/cubit/quiz_answer/quiz_answer_cubit.dart';
 
@@ -26,10 +27,24 @@ class AppProviders extends StatelessWidget {
             FirebaseAuthDatasource(),
           ),
         ),
-        BlocProvider(create: (_) => AccountCubit(FirebaseDatabaseDatasource())),
-        BlocProvider(create: (_) => QuizCubit(FirebaseDatabaseDatasource())),
         BlocProvider(
-            create: (_) => QuizAnswerCubit(FirebaseDatabaseDatasource())),
+          create: (_) => AccountCubit(
+            FirebaseDatabaseDatasource(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => QuizCubit(
+            FirebaseDatabaseDatasource(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => QuizAnswerCubit(
+            FirebaseDatabaseDatasource(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => EducationCubit()..getEducations(),
+        )
       ],
       child: child,
     );

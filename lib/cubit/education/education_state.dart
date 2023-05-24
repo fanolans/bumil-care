@@ -1,9 +1,14 @@
 part of 'education_cubit.dart';
 
-@freezed
-class EducationState with _$EducationState {
-  const factory EducationState.initial() = _Initial;
-  const factory EducationState.loading() = _Loading;
-  const factory EducationState.loaded(List<Education> listEducation) = _Loaded;
-  const factory EducationState.error() = _Error;
+abstract class EducationState {}
+
+class EducationInitial extends EducationState {}
+
+class EducationLoading extends EducationInitial {}
+
+class EducationSuccess extends EducationInitial {
+  final List<Education> educations;
+  EducationSuccess({
+    required this.educations,
+  });
 }

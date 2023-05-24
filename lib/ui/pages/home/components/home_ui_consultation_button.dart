@@ -36,7 +36,7 @@ class HomeConsultationButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
-              Icons.chat,
+              Icons.monitor_heart_outlined,
               size: 20,
               color: Colors.red.shade300,
             ),

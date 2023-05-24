@@ -35,24 +35,23 @@ class LoginGoogleButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                '${assetIcons}icon-google.png',
-                height: 25,
-                fit: BoxFit.contain,
-              ),
+              // Image.asset(
+              //   '${assetIcons}icon-google.png',
+              //   height: 1,
+              //   width: 1,
+              //   fit: BoxFit.contain,
+              // ),
               // Image.asset(
               //   'assets/images/home_google.png',
               //   height: 25,
               //   fit: BoxFit.contain,
               // ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 20,
-              ),
+
               Text(
                 StringConstant.loginWithGoogle,
                 style: TextStyle(
                   fontSize: MediaQuery.of(context).size.width / 24,
-                  color: Colors.black,
+                  color: Colors.red[300],
                   fontWeight: FontWeight.bold,
                 ),
               ),

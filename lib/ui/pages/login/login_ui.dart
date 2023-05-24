@@ -1,9 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quiz/cubit/auth/auth_cubit.dart';
-import 'package:flutter_quiz/data/datasources/firebase_database_datasource.dart';
-import 'package:flutter_quiz/data/models/account.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 import '../../../common/constant/string_constant.dart';

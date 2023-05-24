@@ -62,7 +62,7 @@ class MainApp extends StatelessWidget {
             } else if (snapshot.hasData) {
               return const HomePage();
             } else {
-              return introduction == 0
+              return introduction == 1
                   ? const Introduction()
                   : const LoginPage();
             }

@@ -13,7 +13,7 @@ class StringConstant {
       'Ayo Prediksi Risiko pada kehamilan anda';
   static const String homeConsultationButtonTitle = 'Pemantauan';
   static const String homeConsultationButton =
-      'Sampaikan keluhan anda dengan bidan';
+      'Pantau kehamilan anda dengan baik';
 
   // Quiz Constant
   static const String quizTitle = 'Skrining';
@@ -70,4 +70,7 @@ Sebaiknya anda menerapkan pola gaya hidup sehat:
 
 2. Konsumsi makanan kaya antioksidan (asupan vitamin C, E dan karoten).
 ''';
+
+  // Result Constant
+  static const String monitoringTitle = 'Pemantauan';
 }
