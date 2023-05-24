@@ -58,7 +58,7 @@ class QuizInputHeightAndWeight extends StatelessWidget {
         filled: false,
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.red.shade300,
+            color: Colors.red.shade200,
             width: 5.0,
           ),
           borderRadius: BorderRadius.circular(10.0),
@@ -72,7 +72,7 @@ class QuizInputHeightAndWeight extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.red.shade300,
+            color: Colors.red.shade200,
             width: 3.0,
           ),
           borderRadius: BorderRadius.circular(10.0),

@@ -38,7 +38,7 @@ class HomeConsultationButton extends StatelessWidget {
             Icon(
               Icons.monitor_heart_outlined,
               size: 20,
-              color: Colors.red.shade300,
+              color: Colors.red.shade200,
             ),
             const SizedBox(
               height: 5,

@@ -21,7 +21,7 @@ class HomeScreeningButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           elevation: 3,
-          foregroundColor: Colors.red.shade300,
+          foregroundColor: Colors.red.shade200,
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -36,9 +36,9 @@ class HomeScreeningButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
-              Icons.assignment,
+              Icons.assignment_outlined,
               size: 20,
-              color: Colors.red.shade300,
+              color: Colors.red.shade200,
             ),
             const SizedBox(
               height: 5,

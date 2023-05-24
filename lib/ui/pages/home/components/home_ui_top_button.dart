@@ -15,7 +15,7 @@ class HomeTopButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        foregroundColor: Colors.red.shade300,
+        foregroundColor: Colors.red.shade200,
         backgroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(
           horizontal: 32,

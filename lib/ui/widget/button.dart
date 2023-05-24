@@ -21,8 +21,8 @@ class FleetimeButton extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.red.shade300,
               Colors.red.shade200,
+              Colors.red.shade100,
               //add more colors
             ],
           ),

@@ -128,8 +128,8 @@ class ResultExpansionTile extends StatelessWidget {
       margin: EdgeInsets.zero,
       child: ExpansionTile(
         initiallyExpanded: initiallyExpanded ?? false,
-        iconColor: Colors.red[300],
-        collapsedIconColor: Colors.red[300],
+        iconColor: Colors.red.shade200,
+        collapsedIconColor: Colors.red.shade200,
         title: Text(
           title,
           style: const TextStyle(

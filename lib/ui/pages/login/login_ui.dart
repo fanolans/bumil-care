@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
         end: Alignment.bottomRight,
         stops: const [0.0, 1.0],
         colors: [
-          Colors.red.shade300,
+          Colors.red.shade200,
           Colors.red.shade100,
         ],
       ),

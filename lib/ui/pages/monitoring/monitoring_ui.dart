@@ -25,7 +25,7 @@ class MonitoringPage extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   elevation: 3,
-                  foregroundColor: Colors.red.shade300,
+                  foregroundColor: Colors.red.shade200,
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -40,9 +40,9 @@ class MonitoringPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.chat_rounded,
+                      Icons.chat_outlined,
                       size: 35,
-                      color: Colors.red.shade300,
+                      color: Colors.red.shade200,
                     ),
                     const SizedBox(
                       width: 5,
@@ -52,7 +52,7 @@ class MonitoringPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Chat',
+                          'Konsultasi',
                           style: TextStyle(
                             letterSpacing: 1,
                             fontSize: 14,
