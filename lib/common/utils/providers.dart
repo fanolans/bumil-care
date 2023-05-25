@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quiz/cubit/auth/auth_cubit.dart';
 import 'package:flutter_quiz/cubit/education/education_cubit.dart';
+import 'package:flutter_quiz/cubit/monitoring/monitoring_cubit.dart';
 import 'package:flutter_quiz/cubit/quiz/quiz_cubit.dart';
 import 'package:flutter_quiz/cubit/quiz_answer/quiz_answer_cubit.dart';
 
@@ -44,6 +45,9 @@ class AppProviders extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => EducationCubit()..getEducations(),
+        ),
+        BlocProvider(
+          create: (_) => FaqCubit()..getFaq(),
         )
       ],
       child: child,
