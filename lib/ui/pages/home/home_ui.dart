@@ -112,6 +112,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 90, 20, 0),
@@ -195,28 +196,16 @@ class _HomePageState extends State<HomePage> {
                         ),
                         HomeConsultationButton(
                           name: StringConstant.homeStartQuiz,
-                          onPressed: () async {
-                            if (!await checkEligbleTakeQuiz()) {
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  backgroundColor: Colors.red,
-                                  content: Text(
-                                      'Lengkapi dulu data pribadi anda di halaman profil'),
-                                ),
-                              );
-                              return;
-                            } else {
-                              // ignore: use_build_context_synchronously
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const MonitoringPage();
-                                  },
-                                ),
-                              );
-                            }
+                          onPressed: () {
+                            // ignore: use_build_context_synchronously
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const MonitoringPage();
+                                },
+                              ),
+                            );
                           },
                         ),
                       ],
@@ -233,9 +222,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 50,
                     ),
                   ],
                 ),
