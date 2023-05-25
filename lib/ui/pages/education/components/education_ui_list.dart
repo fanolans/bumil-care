@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quiz/ui/pages/education/component/education_ui_image_container.dart';
+import 'package:flutter_quiz/ui/pages/education/components/education_ui_image_container.dart';
 
 import '../../../../data/models/education.dart';
 import 'education_ui_detail.dart';
