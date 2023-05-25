@@ -5,7 +5,7 @@
         android:label="Bumil Care"
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/splash">
         <activity
             android:name=".MainActivity"
             android:exported="true"
