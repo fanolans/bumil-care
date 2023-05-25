@@ -7,8 +7,8 @@ class FaqInitial extends FaqState {}
 class FaqLoading extends FaqInitial {}
 
 class FaqSuccess extends FaqInitial {
-  final List<Faq> faq;
+  final List<Faq> faqs;
   FaqSuccess({
-    required this.faq,
+    required this.faqs,
   });
 }

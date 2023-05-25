@@ -16,7 +16,7 @@ class FaqCubit extends Cubit<FaqState> {
     );
     emit(
       FaqSuccess(
-        faq: faqFromJson(response.body),
+        faqs: faqFromJson(response.body),
       ),
     );
   }
