@@ -9,7 +9,7 @@ import 'package:flutter_quiz/data/datasources/firebase_auth_datasource.dart';
 import 'package:flutter_quiz/data/datasources/firebase_database_datasource.dart';
 
 import '../../cubit/account/account_cubit.dart';
-import '../../cubit/faq/monitoring_cubit.dart';
+import '../../cubit/faq/faq_cubit.dart';
 
 class AppProviders extends StatelessWidget {
   const AppProviders({
