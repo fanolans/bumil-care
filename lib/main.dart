@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_quiz/common/utils/providers.dart';
 import 'package:flutter_quiz/firebase_options.dart';
 import 'package:flutter_quiz/ui/pages/home/home_ui.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_quiz/introduction.dart';
 import 'package:flutter_quiz/ui/pages/login/login_ui.dart';
@@ -47,7 +48,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: FlexThemeData.light(
           scheme: FlexScheme.sakura,
-          textTheme: GoogleFonts.robotoTextTheme(),
+          textTheme: GoogleFonts.firaSansTextTheme(),
           appBarStyle: FlexAppBarStyle.surface,
         ),
         home: StreamBuilder<User?>(
@@ -62,7 +63,7 @@ class MainApp extends StatelessWidget {
             } else if (snapshot.hasData) {
               return const HomePage();
             } else {
-              return introduction == 1
+              return introduction == 0
                   ? const Introduction()
                   : const LoginPage();
             }
