@@ -11,34 +11,32 @@ class FaqList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 250,
-      child: Container(
-        margin: const EdgeInsets.only(right: 10),
-        child: InkWell(
-          onTap: () {},
-          child: Column(
-            children: [
-              Text(
-                faq.question,
-                maxLines: 2,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-              Text(
-                faq.answer,
-                maxLines: 2,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Card(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
           ),
+        ),
+        child: ExpansionTile(
+          title: Text(
+            faq.question,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          children: [
+            ListTile(
+              title: Text(
+                faq.answer,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
