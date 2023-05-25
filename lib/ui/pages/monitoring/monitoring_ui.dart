@@ -14,35 +14,42 @@ class MonitoringPage extends StatelessWidget {
       appBar: AppBarDefault(
         title: StringConstant.monitoringTitle,
       ),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ConsultationButton(),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                'FAQ',
-                style: TextStyle(
-                  letterSpacing: 1,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+      body: const Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                ConsultationButton(),
+                SizedBox(
+                  height: 25,
                 ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Expanded(
-                child: FaqPage(),
-              )
-            ],
+                Text(
+                  'Frequently Asked Questions (FAQ)',
+                  style: TextStyle(
+                    letterSpacing: 1,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+              ],
+            ),
           ),
-        ),
+          Positioned(
+            top: 150,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: FaqPage(),
+          )
+        ],
       ),
     );
   }
