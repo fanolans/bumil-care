@@ -26,7 +26,7 @@ class Introduction extends StatefulWidget {
 class _IntroductionState extends State<Introduction> {
   Widget _buildImage(String assetName) {
     return Image.asset(
-      '$assetImages$assetName',
+      '$assetIcons$assetName',
       fit: BoxFit.cover,
     );
   }
@@ -51,20 +51,20 @@ class _IntroductionState extends State<Introduction> {
           title: 'Skrining',
           body:
               'Lakukan skrining preeklamsi untuk mencegah komplikasi pada kehamilan!',
-          image: _buildImage('intro-1.png'),
+          image: _buildImage('app-logo.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: 'Konsultasi',
           body:
               'Tanyakan semua keluhanmu seputar kesehatan dan kita carikan solusinya',
-          image: _buildImage('intro-2.png'),
+          image: _buildImage('app-logo.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: 'Edukasi',
           body: 'Perluas pengetahuanmu tentang kesehatan dan gaya hidup sehat!',
-          image: _buildImage('intro-3.png'),
+          image: _buildImage('app-logo.png'),
           decoration: pageDecoration,
         ),
       ],
