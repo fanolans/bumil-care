@@ -21,7 +21,7 @@ class FaqPage extends StatelessWidget {
         if (state is FaqSuccess) {
           return ListView.builder(
             shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
               var faqs = state.faqs[index];
               return FaqList(faq: faqs);
