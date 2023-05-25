@@ -1,17 +1,51 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../data/datasources/firebase_database_datasource.dart';
+import '../monitoring_ui_chat.dart';
 
 class ConsultationButton extends StatelessWidget {
   const ConsultationButton({
     super.key,
   });
+  Future<bool> checkEligbleTakeQuiz() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final account = await FirebaseDatabaseDatasource().getAccount(user.uid);
+    if (account.age == '' || account.height == '' || account.weight == '') {
+      return false;
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 7,
+      height: MediaQuery.of(context).size.height / 10,
       width: MediaQuery.of(context).size.width / 2,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+          if (!await checkEligbleTakeQuiz()) {
+            // ignore: use_build_context_synchronously
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                backgroundColor: Colors.red,
+                content:
+                    Text('Lengkapi dulu data pribadi anda di halaman profil'),
+              ),
+            );
+            return;
+          } else {
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const ChatPage();
+                },
+              ),
+            );
+          }
+        },
         style: ElevatedButton.styleFrom(
           elevation: 3,
           foregroundColor: Colors.red.shade200,
