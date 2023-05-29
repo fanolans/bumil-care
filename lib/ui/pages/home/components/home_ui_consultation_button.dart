@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constant/string_constant.dart';
 
-class HomeConsultationButton extends StatelessWidget {
-  const HomeConsultationButton({
+class HomeMonitoringButton extends StatelessWidget {
+  const HomeMonitoringButton({
     super.key,
     required this.name,
     this.onPressed,
