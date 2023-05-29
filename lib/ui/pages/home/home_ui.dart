@@ -4,12 +4,12 @@ import 'package:flutter_quiz/data/datasources/firebase_database_datasource.dart'
 import 'package:flutter_quiz/data/local/shared_preferences_data.dart';
 import 'package:flutter_quiz/ui/pages/education/education_ui.dart';
 import 'package:flutter_quiz/ui/pages/monitoring/monitoring_ui.dart';
-import 'package:flutter_quiz/ui/pages/quiz/quiz_ui.dart';
 import 'package:flutter_quiz/ui/pages/result/result_ui.dart';
 
 import '../../../common/constant/assets_constant.dart';
 import '../../../common/constant/string_constant.dart';
 import '../../../data/models/account.dart';
+import '../quiz/components/quiz_ui_start.dart';
 import 'components/home_ui_consultation_button.dart';
 import 'components/home_ui_drawer.dart';
 import 'components/home_ui_screening_button.dart';
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 90, 20, 0),
+                padding: const EdgeInsets.fromLTRB(24, 90, 24, 0),
                 child: Column(
                   children: [
                     HomeUserProfileCard(
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                 height: 35,
               ),
               Container(
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Icon(
                       Icons.drag_handle_rounded,
-                      color: Colors.grey.shade600,
+                      color: Colors.red.shade200,
                     ),
                     const SizedBox(
                       height: 5,
@@ -185,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const QuizUi();
+                                  return const QuizStart();
                                 },
                               ),
                             );
@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(
                           width: 16,
                         ),
-                        HomeConsultationButton(
+                        HomeMonitoringButton(
                           name: StringConstant.homeStartQuiz,
                           onPressed: () {
                             // ignore: use_build_context_synchronously
@@ -210,8 +210,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     const Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20),
+                      padding: EdgeInsets.only(left: 24, top: 24),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -226,8 +229,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const Expanded(
-                child: EducationPage(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 3,
+                child: const EducationPage(),
               ),
             ],
           ),
