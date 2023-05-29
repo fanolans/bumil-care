@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quiz/cubit/education/education_cubit.dart';
 
-import 'component/education_ui_list.dart';
+import 'components/education_ui_list.dart';
 
 class EducationPage extends StatelessWidget {
   const EducationPage({
@@ -22,11 +22,11 @@ class EducationPage extends StatelessWidget {
           return ListView.builder(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
+            itemCount: state.educations.length,
             itemBuilder: (context, index) {
               var educations = state.educations[index];
               return EducationList(education: educations);
             },
-            itemCount: state.educations.length,
           );
         }
         return const Center(
