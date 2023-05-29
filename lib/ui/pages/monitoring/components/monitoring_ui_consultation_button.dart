@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../common/constant/assets_constant.dart';
 import '../../../../data/datasources/firebase_database_datasource.dart';
-import '../monitoring_ui_chat.dart';
 
 class ConsultationButton extends StatelessWidget {
   const ConsultationButton({
@@ -36,14 +36,14 @@ class ConsultationButton extends StatelessWidget {
             return;
           } else {
             // ignore: use_build_context_synchronously
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return const ChatPage();
-                },
-              ),
-            );
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) {
+            //       return const ChatPage();
+            //     },
+            //   ),
+            // );
           }
         },
         style: ElevatedButton.styleFrom(
@@ -58,19 +58,21 @@ class ConsultationButton extends StatelessWidget {
             MediaQuery.of(context).size.height / 5,
           ),
         ),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              Icons.chat_outlined,
-              size: 35,
-              color: Colors.red.shade200,
+            SizedBox(
+              height: 30,
+              width: 30,
+              child: ImageIcon(
+                AssetImage('${assetIcons}icon-consultation.png'),
+              ),
             ),
-            const SizedBox(
-              width: 5,
+            SizedBox(
+              width: 4,
             ),
-            const Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

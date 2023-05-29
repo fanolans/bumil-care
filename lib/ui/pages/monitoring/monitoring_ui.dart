@@ -3,6 +3,7 @@ import 'package:flutter_quiz/ui/pages/monitoring/components/monitoring_ui_faq.da
 import 'package:flutter_quiz/ui/widget/appbar.dart';
 
 import '../../../common/constant/string_constant.dart';
+import 'components/monitoring_ui_animation.dart';
 import 'components/monitoring_ui_consultation_button.dart';
 
 class MonitoringPage extends StatelessWidget {
@@ -23,9 +24,13 @@ class MonitoringPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ConsultationButton(),
+                MonitoringAnimation(),
                 SizedBox(
                   height: 25,
+                ),
+                ConsultationButton(),
+                SizedBox(
+                  height: 50,
                 ),
                 Text(
                   'Frequently Asked Questions (FAQ)',
@@ -36,14 +41,11 @@ class MonitoringPage extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(
-                  height: 25,
-                ),
               ],
             ),
           ),
           Positioned(
-            top: 150,
+            top: 350,
             left: 0,
             right: 0,
             bottom: 0,

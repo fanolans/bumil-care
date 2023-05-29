@@ -13,7 +13,8 @@ class QuizImage extends StatelessWidget {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        height: MediaQuery.of(context).size.height / 4.2,
+        height: MediaQuery.of(context).size.height / 3,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(

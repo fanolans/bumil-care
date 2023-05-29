@@ -19,13 +19,7 @@ class FleetimeButton extends StatelessWidget {
       ),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.red.shade200,
-              Colors.red.shade100,
-              //add more colors
-            ],
-          ),
+          color: Colors.red.shade200,
           borderRadius: BorderRadius.circular(10),
         ),
         child: ElevatedButton(

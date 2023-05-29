@@ -7,6 +7,8 @@ import 'package:flutter_quiz/ui/pages/home/home_ui.dart';
 import 'package:flutter_quiz/ui/widget/appbar.dart';
 import 'package:flutter_quiz/ui/widget/button.dart';
 
+import 'components/result_ui_expansion_tile.dart';
+
 class ResultPage extends StatefulWidget {
   const ResultPage({super.key});
 
@@ -100,79 +102,6 @@ class _ResultPageState extends State<ResultPage> {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class ResultExpansionTile extends StatelessWidget {
-  const ResultExpansionTile({
-    super.key,
-    required this.title,
-    required this.content,
-    this.initiallyExpanded,
-  });
-
-  final String title;
-  final List<String> content;
-  final bool? initiallyExpanded;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      clipBehavior: Clip.antiAlias,
-      margin: EdgeInsets.zero,
-      child: ExpansionTile(
-        initiallyExpanded: initiallyExpanded ?? false,
-        iconColor: Colors.red.shade200,
-        collapsedIconColor: Colors.red.shade200,
-        title: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-          ),
-        ),
-        controlAffinity: ListTileControlAffinity.leading,
-        childrenPadding: const EdgeInsets.symmetric(
-          horizontal: 8,
-        ),
-        children: [
-          const ListTile(
-            title: Text(
-              'Sebaiknya anda menerapkan pola gaya hidup sehat berikut:',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 14,
-                height: 1.2,
-              ),
-            ),
-          ),
-          ...content.asMap().entries.map(
-                (e) => ListTile(
-                  minLeadingWidth: 10,
-                  leading: Text(
-                    '${e.key + 1}.',
-                    style: const TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                  title: Text(
-                    e.value,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      height: 1.2,
-                    ),
-                  ),
-                ),
-              ),
-        ],
       ),
     );
   }

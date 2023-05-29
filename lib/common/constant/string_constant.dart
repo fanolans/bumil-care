@@ -16,7 +16,7 @@ class StringConstant {
       'Pantau kehamilan anda dengan baik';
 
   // Quiz Constant
-  static const String quizTitle = 'Skrining';
+  static const String quizTitle = 'Skrining Preeklamsi';
   static const String quizContentTitle = 'Umur';
   static const String quizContentProgress = '1/5';
   static const String quizContent = '''
@@ -71,6 +71,6 @@ Sebaiknya anda menerapkan pola gaya hidup sehat:
 2. Konsumsi makanan kaya antioksidan (asupan vitamin C, E dan karoten).
 ''';
 
-  // Result Constant
+  // Monitoring Constant
   static const String monitoringTitle = 'Pemantauan';
 }

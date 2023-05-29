@@ -43,10 +43,12 @@ class _QuizUiState extends State<QuizUi> {
       );
       await SharedPreferencesData.saveResiko(resiko);
       await SharedPreferencesData.saveQuizAnswer(quizAnswer);
+      // ignore: use_build_context_synchronously
       context.read<QuizAnswerCubit>().addQuizAnswer(
             user.uid,
             quizAnswer,
           );
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return const ResultPage();
       }));

@@ -20,6 +20,7 @@ class FaqList extends StatelessWidget {
           ),
         ),
         child: ExpansionTile(
+          collapsedIconColor: Colors.red.shade200,
           title: Text(
             faq.question,
             style: const TextStyle(

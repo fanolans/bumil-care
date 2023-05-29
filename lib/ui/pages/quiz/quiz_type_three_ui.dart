@@ -7,7 +7,6 @@ import 'package:flutter_quiz/ui/pages/quiz/components/quiz_ui_content.dart';
 import 'package:flutter_quiz/ui/pages/quiz/components/quiz_ui_image.dart';
 import 'package:flutter_quiz/ui/pages/quiz/components/quiz_ui_input_numbers_form.dart';
 import 'package:flutter_quiz/ui/pages/quiz/components/quiz_ui_title.dart';
-import 'package:flutter_quiz/ui/widget/appbar.dart';
 import 'package:flutter_quiz/ui/widget/button.dart';
 
 import '../../../common/utils/formula.dart';
@@ -37,8 +36,9 @@ class _QuizTypeThreePageState extends State<QuizTypeThreePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarDefault(
-        title: StringConstant.quiz2Title,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
       ),
       body: Scrollbar(
         child: SingleChildScrollView(
@@ -52,19 +52,19 @@ class _QuizTypeThreePageState extends State<QuizTypeThreePage> {
                       imgPath: widget.quiz.imageUrl,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 24,
+                      height: MediaQuery.of(context).size.height / 50,
                     ),
                     QuizTitle(
                       title: widget.quiz.title,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 36,
+                      height: MediaQuery.of(context).size.height / 50,
                     ),
                     QuizContent(
                       title: widget.quiz.content,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 24,
+                      height: MediaQuery.of(context).size.height / 50,
                     ),
                   ],
                 ),
