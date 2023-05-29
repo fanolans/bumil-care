@@ -26,7 +26,7 @@ class Introduction extends StatefulWidget {
 class _IntroductionState extends State<Introduction> {
   Widget _buildImage(String assetName) {
     return Image.asset(
-      '$assetIcons$assetName',
+      '$assetImages$assetName',
       fit: BoxFit.cover,
     );
   }
@@ -40,8 +40,8 @@ class _IntroductionState extends State<Introduction> {
       ),
       bodyAlignment: Alignment.center,
       bodyTextStyle: TextStyle(fontSize: 14),
-      imageAlignment: Alignment.bottomCenter,
-      imagePadding: EdgeInsets.zero,
+      imagePadding: EdgeInsets.only(left: 16, right: 16),
+      imageFlex: 2,
       pageColor: Colors.white,
     );
     return IntroductionScreen(
@@ -51,20 +51,20 @@ class _IntroductionState extends State<Introduction> {
           title: 'Skrining',
           body:
               'Lakukan skrining preeklamsi untuk mencegah komplikasi pada kehamilan!',
-          image: _buildImage('app-logo.png'),
+          image: _buildImage('intro-1.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: 'Konsultasi',
+          title: 'Pemantauan',
           body:
-              'Tanyakan semua keluhanmu seputar kesehatan dan kita carikan solusinya',
-          image: _buildImage('app-logo.png'),
+              'Tanyakan semua keluhanmu seputar kehamilan dan kita carikan solusinya',
+          image: _buildImage('intro-2.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: 'Edukasi',
-          body: 'Perluas pengetahuanmu tentang kesehatan dan gaya hidup sehat!',
-          image: _buildImage('app-logo.png'),
+          body: 'Perluas pengetahuanmu tentang kehamilan dan gaya hidup sehat!',
+          image: _buildImage('intro-3.png'),
           decoration: pageDecoration,
         ),
       ],
