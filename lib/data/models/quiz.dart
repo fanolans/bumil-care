@@ -119,7 +119,7 @@ List<Quiz> listQuiz = [
   Quiz(
     id: '1',
     imageUrl: 'https://i.ibb.co/QCLdph0/bayi.png',
-    title: 'Umur',
+    title: 'Umur > 35',
     content:
         'Usia hamil yang tidak beresiko yaitu antara 20-35 tahun. Rentang usia tersebut merupakan usia reproduktif yang aman untuk hamil karena komplikasi kehamilan yang sedikit. Usia >35 tahun telah terjadi perubahan fungsional dan struktural yang berperan pada perubahan tekanan darah, sehingga lebih rentan mengalami preeklampsia.\n\nSumber : Espinoza dkk., 2020',
     quiz: 'Usia saya saat ini lebih dari atau sama dengan 35 tahun',
