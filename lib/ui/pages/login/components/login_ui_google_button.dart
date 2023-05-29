@@ -23,7 +23,7 @@ class LoginGoogleButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.red.shade200,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -37,6 +37,7 @@ class LoginGoogleButton extends StatelessWidget {
             children: [
               Image.asset(
                 '${assetIcons}icon-google.png',
+                color: Colors.white,
                 height: 25,
                 fit: BoxFit.contain,
               ),
@@ -47,7 +48,7 @@ class LoginGoogleButton extends StatelessWidget {
                 StringConstant.loginWithGoogle,
                 style: TextStyle(
                   fontSize: MediaQuery.of(context).size.width / 24,
-                  color: Colors.red.shade200,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
