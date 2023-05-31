@@ -56,7 +56,7 @@ class _ResultPageState extends State<ResultPage> {
                     onPressed: () {},
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 15,
+                    height: MediaQuery.of(context).size.height / 25,
                   ),
                   Text(
                     StringConstant.resultSubtitle,
@@ -66,7 +66,7 @@ class _ResultPageState extends State<ResultPage> {
                         ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 36,
+                    height: MediaQuery.of(context).size.height / 50,
                   ),
                   Expanded(
                     child: ListView.separated(
