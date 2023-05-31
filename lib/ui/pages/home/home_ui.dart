@@ -39,15 +39,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  Future<bool> checkEligbleTakeQuiz() async {
-    final user = FirebaseAuth.instance.currentUser!;
-    final account = await FirebaseDatabaseDatasource().getAccount(user.uid);
-    if (account.age == '' || account.height == '' || account.weight == '') {
-      return false;
-    }
-    return true;
-  }
-
   void addAccount() async {
     final user = FirebaseAuth.instance.currentUser!;
     final myAccount = Account(
