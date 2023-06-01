@@ -2,6 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_quiz/data/models/account.dart';
 import 'package:flutter_quiz/data/models/quiz_answer.dart';
 
+import '../models/message.dart';
 import '../models/quiz.dart';
 
 class FirebaseDatabaseDatasource {
@@ -91,5 +92,17 @@ class FirebaseDatabaseDatasource {
         .child(id)
         .child('result')
         .set(data);
+  }
+}
+
+class MessageDao {
+  final DatabaseReference _messagesRef =
+      FirebaseDatabase.instance.ref().child('messages');
+  void saveMessage(Message message) {
+    _messagesRef.push().set(message.toJson());
+  }
+
+  Query getMessageQuery() {
+    return _messagesRef;
   }
 }
