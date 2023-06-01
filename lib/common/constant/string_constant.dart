@@ -73,4 +73,5 @@ Sebaiknya anda menerapkan pola gaya hidup sehat:
 
   // Monitoring Constant
   static const String monitoringTitle = 'Pemantauan';
+  static const String chatTitle = 'Konsultasi Bidan';
 }
