@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constant/assets_constant.dart';
 import '../../../../data/datasources/firebase_database_datasource.dart';
+import 'monitoring_ui_message_list.dart';
 
 class ConsultationButton extends StatelessWidget {
   const ConsultationButton({
@@ -36,14 +37,14 @@ class ConsultationButton extends StatelessWidget {
             return;
           } else {
             // ignore: use_build_context_synchronously
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) {
-            //       return const ChatPage();
-            //     },
-            //   ),
-            // );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return MessageList();
+                },
+              ),
+            );
           }
         },
         style: ElevatedButton.styleFrom(
