@@ -9,7 +9,7 @@ import 'monitoring_ui_message_widget.dart';
 
 class MessageList extends StatefulWidget {
   MessageList({super.key});
-  final messageDao = MessageDao();
+  final messageConsultation = MessageConsultation();
 
   @override
   State<MessageList> createState() => _MessageListState();
@@ -22,7 +22,7 @@ class _MessageListState extends State<MessageList> {
   void _sendMessage() {
     if (_canSendMessage()) {
       final message = Message(_messageController.text, DateTime.now());
-      widget.messageDao.saveMessage(message);
+      widget.messageConsultation.saveMessage(message);
       _messageController.clear();
       setState(() {});
     }
@@ -32,7 +32,7 @@ class _MessageListState extends State<MessageList> {
     return Expanded(
       child: FirebaseAnimatedList(
         controller: _scrollController,
-        query: widget.messageDao.getMessageQuery(),
+        query: widget.messageConsultation.getMessageQuery(),
         itemBuilder: (context, snapshot, animation, index) {
           final json = snapshot.value as Map<dynamic, dynamic>;
           final message = Message.fromJson(json);

@@ -95,7 +95,7 @@ class FirebaseDatabaseDatasource {
   }
 }
 
-class MessageDao {
+class MessageConsultation {
   final DatabaseReference _messagesRef =
       FirebaseDatabase.instance.ref().child('messages');
   void saveMessage(Message message) {
